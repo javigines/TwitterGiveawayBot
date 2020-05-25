@@ -31,14 +31,14 @@ class TwitterLogIn():
             self._removeCookiesBanner()
 
         usernameField = self.driver.find_element_by_xpath('/html/body/div/div/div/div[2]/main/div/div/form/div/div[1]/label/div/div[2]/div/input')
-        self.humanizedUtils.send_keys_slowed(usernameField, self.selectedAccount[choice(["username", "email"])])
+        self.humanizedUtils.send_keys_slowed(usernameField, self.selectedAccount[choice(["u", "e"])])
         self.humanizedUtils.randomSlow(0.5, 2)
 
         if self.cookiesClicked != True and random() > 0.5:
             self._removeCookiesBanner()
 
         passwordField = self.driver.find_element_by_xpath('/html/body/div/div/div/div[2]/main/div/div/form/div/div[2]/label/div/div[2]/div/input')
-        self.humanizedUtils.send_keys_slowed(passwordField, self.selectedAccount["password"])
+        self.humanizedUtils.send_keys_slowed(passwordField, self.selectedAccount["p"])
         self.humanizedUtils.randomSlow(0.5, 2)
 
         if self.cookiesClicked != True:
@@ -58,11 +58,11 @@ class TwitterLogIn():
     
 
     def _saveCookies(self):
-        with open(f"sessions/{self.selectedAccount['username']}-cookies.txt", "w+") as session_file:
+        with open(f"sessions/{self.selectedAccount['u']}-cookies.txt", "w+") as session_file:
             session_file.write( dumps( self.driver.get_cookies()) )
 
     def _recoverCookies(self):
-        with open(f"sessions/{self.selectedAccount['username']}-cookies.txt", "r") as session_file:
+        with open(f"sessions/{self.selectedAccount['u']}-cookies.txt", "r") as session_file:
             cookies = loads( session_file.read() )
             for i in cookies:
                 self.driver.add_cookie(i)

@@ -11,7 +11,7 @@ from modules.twitter.logIn import TwitterLogIn
 from modules.others.humanizedUtils import HumanizedUtils
 
 accounts = [
-    {"username": "Fernando93Gomez", "email": "michal@telegmail.com", "password": "p8MQutPTHRp9@o"}
+    {"u": "Fernando93Gomez", "e": "michal@telegmail.com", "p": "p8MQutPTHRp9@o"}
 ]
 
 typeMinCharPerMinute = 200 # 60 secs / 180 characters
