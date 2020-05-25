@@ -2,3 +2,5 @@
 .vscode/*
 sessions/*
 !sessions/.gitkeep
+
+__pycache__/
